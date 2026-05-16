@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://www.srf.ch/radio-srf-1/gespielte-musik"
+      }
+      description: "API providing information about currently played music on Radio SRF 1 including song titles and artists."
+      servers: [
+        {
+          description: "Radio SRF 1 Production Server"
+          url: "https://www.srf.ch"
+        }
+      ]
+      title: "Radio SRF 1"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

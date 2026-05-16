@@ -1,0 +1,83 @@
+# Entity: music
+
+main: kit: entity: music: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "album"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "artist"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "duration"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "played_at"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "music"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 10
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/radio-srf-1/gespielte-musik"
+          parts: [
+            "radio-srf-1"
+            "gespielte-musik"
+          ]
+          select: {
+            exist: [
+              "date"
+              "limit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

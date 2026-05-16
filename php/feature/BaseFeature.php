@@ -1,0 +1,37 @@
+<?php
+declare(strict_types=1);
+
+// RadioSrf1 SDK base feature
+
+class RadioSrf1BaseFeature
+{
+    public string $version;
+    public string $name;
+    public bool $active;
+
+    public function __construct()
+    {
+        $this->version = '0.0.1';
+        $this->name = 'base';
+        $this->active = true;
+    }
+
+    public function get_version(): string { return $this->version; }
+    public function get_name(): string { return $this->name; }
+    public function get_active(): bool { return $this->active; }
+
+    public function init(RadioSrf1Context $ctx, array $options): void {}
+    public function PostConstruct(RadioSrf1Context $ctx): void {}
+    public function PostConstructEntity(RadioSrf1Context $ctx): void {}
+    public function SetData(RadioSrf1Context $ctx): void {}
+    public function GetData(RadioSrf1Context $ctx): void {}
+    public function GetMatch(RadioSrf1Context $ctx): void {}
+    public function SetMatch(RadioSrf1Context $ctx): void {}
+    public function PrePoint(RadioSrf1Context $ctx): void {}
+    public function PreSpec(RadioSrf1Context $ctx): void {}
+    public function PreRequest(RadioSrf1Context $ctx): void {}
+    public function PreResponse(RadioSrf1Context $ctx): void {}
+    public function PreResult(RadioSrf1Context $ctx): void {}
+    public function PreDone(RadioSrf1Context $ctx): void {}
+    public function PreUnexpected(RadioSrf1Context $ctx): void {}
+}

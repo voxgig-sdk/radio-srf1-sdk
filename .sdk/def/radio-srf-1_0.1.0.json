@@ -1,0 +1,161 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Radio SRF 1",
+    "description": "API providing information about currently played music on Radio SRF 1 including song titles and artists.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.srf.ch/radio-srf-1/gespielte-musik"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.srf.ch",
+      "description": "Radio SRF 1 Production Server"
+    }
+  ],
+  "paths": {
+    "/radio-srf-1/gespielte-musik": {
+      "get": {
+        "summary": "Get currently played music",
+        "description": "Retrieves information about songs currently or recently played on Radio SRF 1, including song titles and artists.",
+        "operationId": "getPlayedMusic",
+        "tags": [
+          "Music"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of tracks to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Date for which to retrieve played music (format: YYYY-MM-DD)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with played music information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tracks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "description": "Song title"
+                          },
+                          "artist": {
+                            "type": "string",
+                            "description": "Artist name"
+                          },
+                          "playedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Timestamp when the song was played"
+                          },
+                          "album": {
+                            "type": "string",
+                            "description": "Album name"
+                          },
+                          "duration": {
+                            "type": "integer",
+                            "description": "Duration in seconds"
+                          }
+                        },
+                        "required": [
+                          "title",
+                          "artist"
+                        ]
+                      }
+                    },
+                    "station": {
+                      "type": "string",
+                      "description": "Radio station name",
+                      "example": "Radio SRF 1"
+                    },
+                    "lastUpdated": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last update timestamp"
+                    }
+                  }
+                },
+                "example": {
+                  "tracks": [
+                    {
+                      "title": "Example Song",
+                      "artist": "Example Artist",
+                      "playedAt": "2024-01-15T14:30:00Z",
+                      "album": "Example Album",
+                      "duration": 210
+                    }
+                  ],
+                  "station": "Radio SRF 1",
+                  "lastUpdated": "2024-01-15T14:35:00Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Music",
+      "description": "Operations related to played music information"
+    }
+  ]
+}
