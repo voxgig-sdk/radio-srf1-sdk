@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/radio-srf1-sdk"
-	"github.com/voxgig-sdk/radio-srf1-sdk/core"
+	sdk "github.com/voxgig-sdk/radio-srf1-sdk/go"
+	"github.com/voxgig-sdk/radio-srf1-sdk/go/core"
 )
 
 func TestMusicDirect(t *testing.T) {

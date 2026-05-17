@@ -1,10 +1,10 @@
 package voxgigradiosrf1sdk
 
 import (
-	"github.com/voxgig-sdk/radio-srf1-sdk/core"
-	"github.com/voxgig-sdk/radio-srf1-sdk/entity"
-	"github.com/voxgig-sdk/radio-srf1-sdk/feature"
-	_ "github.com/voxgig-sdk/radio-srf1-sdk/utility"
+	"github.com/voxgig-sdk/radio-srf1-sdk/go/core"
+	"github.com/voxgig-sdk/radio-srf1-sdk/go/entity"
+	"github.com/voxgig-sdk/radio-srf1-sdk/go/feature"
+	_ "github.com/voxgig-sdk/radio-srf1-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

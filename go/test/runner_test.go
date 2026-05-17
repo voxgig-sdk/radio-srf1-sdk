@@ -12,9 +12,9 @@ import (
 	"sync"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/radio-srf1-sdk"
+	sdk "github.com/voxgig-sdk/radio-srf1-sdk/go"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/radio-srf1-sdk/go/utility/struct"
 )
 
 var envLocalOnce sync.Once

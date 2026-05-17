@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/radio-srf1-sdk"
-	"github.com/voxgig-sdk/radio-srf1-sdk/core"
+	sdk "github.com/voxgig-sdk/radio-srf1-sdk/go"
+	"github.com/voxgig-sdk/radio-srf1-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/radio-srf1-sdk/go/utility/struct"
 )
 
 func TestMusicEntity(t *testing.T) {
