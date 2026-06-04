@@ -93,14 +93,12 @@ func musicDirectSetup(mockres any) *musicDirectSetupResult {
 	env := envOverride(map[string]any{
 		"RADIOSRF__TEST_MUSIC_ENTID": map[string]any{},
 		"RADIOSRF__TEST_LIVE":    "FALSE",
-		"RADIOSRF__APIKEY":       "NONE",
 	})
 
 	live := env["RADIOSRF__TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["RADIOSRF__APIKEY"],
 		}
 		client := sdk.NewRadioSrf1SDK(mergedOpts)
 

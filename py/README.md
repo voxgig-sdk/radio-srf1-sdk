@@ -23,12 +23,9 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from radiosrf1_sdk import RadioSrf1SDK
 
-client = RadioSrf1SDK({
-    "apikey": os.environ.get("RADIO-SRF1_APIKEY"),
-})
+client = RadioSrf1SDK({})
 ```
 
 ### 2. List musics
@@ -121,7 +118,6 @@ Create a `.env.local` file at the project root:
 
 ```
 RADIO-SRF1_TEST_LIVE=TRUE
-RADIO-SRF1_APIKEY=<your-key>
 ```
 
 Then run:
@@ -145,7 +141,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

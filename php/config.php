@@ -20,9 +20,6 @@ class RadioSrf1Config
             ],
             "options" => [
                 "base" => "https://www.srf.ch",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

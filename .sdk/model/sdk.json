@@ -16,7 +16,15 @@
           }
         ],
         "title": "Radio SRF 1",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Now-playing track data for Swiss public radio station Radio SRF 1",
+        "homepage": "https://www.srf.ch/radio-srf-1",
+        "docs_url": "https://www.srf.ch/radio-srf-1",
+        "about_md": "[Radio SRF 1](https://www.srf.ch/radio-srf-1) is the flagship information and entertainment radio channel of [Schweizer Radio und Fernsehen (SRF)](https://www.srf.ch), the German-language division of the Swiss public broadcaster SRG SSR. The station broadcasts in Swiss German and mixes news, weather, sports, talk and adult-contemporary music for a general audience.\n\nThis SDK wraps the unofficial feed that backs the station's \"Gespielte Musik\" (played music) listing, exposing the song currently on air and the recently played tracks.\n\nWhat you typically get back per track:\n\n- Title and performing artist\n- Time the song was aired\n- The station identifier (Radio SRF 1)\n\nOperational notes: this is an inferred public endpoint used by the SRF website rather than a documented developer API. Treat rate limits, stability and the underlying data licence as unknown — content is owned by SRF/SRG SSR and intended for personal, non-commercial use.",
+        "entity_desc": {
+          "music": "The track currently playing and the recent play history on Radio SRF 1, typically including song title, artist and airtime."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +32,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "music": {

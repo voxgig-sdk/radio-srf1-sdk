@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'RADIOSRF__TEST_MUSIC_ENTID': {},
     'RADIOSRF__TEST_LIVE': 'FALSE',
-    'RADIOSRF__APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.RADIOSRF__TEST_LIVE
 
   if (live) {
     const client = new RadioSrf1SDK({
-      apikey: env.RADIOSRF__APIKEY,
     })
 
     let idmap: any = env['RADIOSRF__TEST_MUSIC_ENTID']
