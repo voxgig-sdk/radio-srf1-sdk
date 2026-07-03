@@ -1,22 +1,8 @@
 # RadioSrf1 SDK
 
-Now-playing track data for Swiss public radio station Radio SRF 1
+Radio SRF 1 client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Radio SRF 1
-
-[Radio SRF 1](https://www.srf.ch/radio-srf-1) is the flagship information and entertainment radio channel of [Schweizer Radio und Fernsehen (SRF)](https://www.srf.ch), the German-language division of the Swiss public broadcaster SRG SSR. The station broadcasts in Swiss German and mixes news, weather, sports, talk and adult-contemporary music for a general audience.
-
-This SDK wraps the unofficial feed that backs the station's "Gespielte Musik" (played music) listing, exposing the song currently on air and the recently played tracks.
-
-What you typically get back per track:
-
-- Title and performing artist
-- Time the song was aired
-- The station identifier (Radio SRF 1)
-
-Operational notes: this is an inferred public endpoint used by the SRF website rather than a documented developer API. Treat rate limits, stability and the underlying data licence as unknown — content is owned by SRF/SRG SSR and intended for personal, non-commercial use.
 
 ## Try it
 
@@ -50,29 +36,31 @@ gem install radio-srf1-sdk
 luarocks install radio-srf1-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { RadioSrf1SDK } from 'radio-srf1'
 
-const client = new RadioSrf1SDK({})
+const client = new RadioSrf1SDK({
+  apikey: process.env.RADIO-SRF1_APIKEY,
+})
 
 // List all musics
 const musics = await client.Music().list()
+console.log(musics.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -102,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Music** | The track currently playing and the recent play history on Radio SRF 1, typically including song title, artist and airtime. | `/radio-srf-1/gespielte-musik` |
+| **Music** |  | `/radio-srf-1/gespielte-musik` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from radiosrf1_sdk import RadioSrf1SDK
 
-client = RadioSrf1SDK({})
+client = RadioSrf1SDK({
+    "apikey": os.environ.get("RADIO-SRF1_APIKEY"),
+})
 
 # List all musics
-musics, err = client.Music(None).list(None, None)
+musics, err = client.Music().list()
+print(musics)
 ```
 
 ### PHP
@@ -126,10 +118,13 @@ musics, err = client.Music(None).list(None, None)
 <?php
 require_once 'radiosrf1_sdk.php';
 
-$client = new RadioSrf1SDK([]);
+$client = new RadioSrf1SDK([
+    "apikey" => getenv("RADIO-SRF1_APIKEY"),
+]);
 
 // List all musics
-[$musics, $err] = $client->Music(null)->list(null, null);
+[$musics, $err] = $client->Music()->list();
+print_r($musics);
 ```
 
 ### Golang
@@ -137,10 +132,13 @@ $client = new RadioSrf1SDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/radio-srf1-sdk/go"
 
-client := sdk.NewRadioSrf1SDK(map[string]any{})
+client := sdk.NewRadioSrf1SDK(map[string]any{
+    "apikey": os.Getenv("RADIO-SRF1_APIKEY"),
+})
 
 // List all musics
 musics, err := client.Music(nil).List(nil, nil)
+fmt.Println(musics)
 ```
 
 ### Ruby
@@ -148,10 +146,13 @@ musics, err := client.Music(nil).List(nil, nil)
 ```ruby
 require_relative "RadioSrf1_sdk"
 
-client = RadioSrf1SDK.new({})
+client = RadioSrf1SDK.new({
+  "apikey" => ENV["RADIO-SRF1_APIKEY"],
+})
 
 # List all musics
-musics, err = client.Music(nil).list(nil, nil)
+musics, err = client.Music().list
+puts musics
 ```
 
 ### Lua
@@ -159,10 +160,13 @@ musics, err = client.Music(nil).list(nil, nil)
 ```lua
 local sdk = require("radio-srf1_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("RADIO-SRF1_APIKEY"),
+})
 
 -- List all musics
-local musics, err = client:Music(nil):list(nil, nil)
+local musics, err = client:Music():list()
+print(musics)
 ```
 
 ## Unit testing in offline mode
@@ -181,25 +185,21 @@ const result = await client.Music().load({ id: 'test01' })
 ### Python
 
 ```python
-client = RadioSrf1SDK.test(None, None)
-result, err = client.Music(None).load(
-    {"id": "test01"}, None
-)
+client = RadioSrf1SDK.test()
+result, err = client.Music().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = RadioSrf1SDK::test(null, null);
-[$result, $err] = $client->Music(null)->load(
-    ["id" => "test01"], null
-);
+$client = RadioSrf1SDK::test();
+[$result, $err] = $client->Music()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Music(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -208,19 +208,15 @@ result, err := client.Music(nil).Load(
 ### Ruby
 
 ```ruby
-client = RadioSrf1SDK.test(nil, nil)
-result, err = client.Music(nil).load(
-  { "id" => "test01" }, nil
-)
+client = RadioSrf1SDK.test
+result, err = client.Music().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Music(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Music():load({ id = "test01" })
 ```
 
 ## How it works
@@ -324,10 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Radio SRF 1
-
-- Upstream: [https://www.srf.ch/radio-srf-1](https://www.srf.ch/radio-srf-1)
 
 ---
 

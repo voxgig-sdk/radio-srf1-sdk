@@ -68,12 +68,14 @@ function music_direct_setup($mockres)
     $env = Runner::env_override([
         "RADIOSRF__TEST_MUSIC_ENTID" => [],
         "RADIOSRF__TEST_LIVE" => "FALSE",
+        "RADIOSRF__APIKEY" => "NONE",
     ]);
 
     $live = $env["RADIOSRF__TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["RADIOSRF__APIKEY"],
         ];
         $client = new RadioSrf1SDK($merged_opts);
         return [

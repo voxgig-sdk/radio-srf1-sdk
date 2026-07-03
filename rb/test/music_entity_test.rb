@@ -83,6 +83,7 @@ def music_basic_setup(extra)
     "RADIOSRF__TEST_MUSIC_ENTID" => idmap,
     "RADIOSRF__TEST_LIVE" => "FALSE",
     "RADIOSRF__TEST_EXPLAIN" => "FALSE",
+    "RADIOSRF__APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,6 +95,7 @@ def music_basic_setup(extra)
   if env["RADIOSRF__TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["RADIOSRF__APIKEY"],
       },
       extra || {},
     ])
