@@ -10,13 +10,13 @@ The Ruby SDK for the RadioSrf1 API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install radio-srf1-sdk
+gem install voxgig-sdk-radio-srf1
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "radio-srf1-sdk"
+gem "voxgig-sdk-radio-srf1"
 ```
 
 Then run:

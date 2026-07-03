@@ -10,7 +10,7 @@ The Python SDK for the RadioSrf1 API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install radio-srf1-sdk
+pip install voxgig-sdk-radio-srf1
 ```
 
 Or install from source:

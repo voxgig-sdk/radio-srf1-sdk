@@ -10,7 +10,7 @@ The TypeScript SDK for the RadioSrf1 API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install radio-srf1
+npm install @voxgig-sdk/radio-srf1
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The PHP SDK for the RadioSrf1 API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/radio-srf1-sdk
+composer require voxgig-sdk/radio-srf1
 ```
 
 

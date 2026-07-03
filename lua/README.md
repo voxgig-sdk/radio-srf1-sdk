@@ -10,7 +10,7 @@ The Lua SDK for the RadioSrf1 API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install radio-srf1-sdk
+luarocks install voxgig-sdk-radio-srf1
 ```
 
 If the module is not yet published, add the source directory to
