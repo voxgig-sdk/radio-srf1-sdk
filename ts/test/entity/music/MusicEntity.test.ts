@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'RADIO_SRF__TEST_MUSIC_ENTID': idmap,
     'RADIO_SRF__TEST_LIVE': 'FALSE',
     'RADIO_SRF__TEST_EXPLAIN': 'FALSE',
-    'RADIO_SRF__APIKEY': 'NONE',
   })
 
   idmap = env['RADIO_SRF__TEST_MUSIC_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new RadioSrf1SDK(merge([
       {
-        apikey: env.RADIO_SRF__APIKEY,
       },
       extra
     ]))

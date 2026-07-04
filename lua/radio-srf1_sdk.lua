@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:music():list() / client:music():load({ id = ... })
+function RadioSrf1SDK:music(data)
+  local EntityMod = require("entity.music_entity")
+  if data == nil then
+    if self._music == nil then
+      self._music = EntityMod.new(self, nil)
+    end
+    return self._music
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:music() instead.
 function RadioSrf1SDK:Music(data)
   local EntityMod = require("entity.music_entity")
   return EntityMod.new(self, data)

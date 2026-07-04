@@ -43,8 +43,7 @@ class MusicEntityTest < Minitest::Test
     music_ref01_ent = client.Music(nil)
     music_ref01_match = {}
 
-    music_ref01_list_result, err = music_ref01_ent.list(music_ref01_match, nil)
-    assert_nil err
+    music_ref01_list_result = music_ref01_ent.list(music_ref01_match, nil)
     assert music_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def music_basic_setup(extra)
     "RADIOSRF__TEST_MUSIC_ENTID" => idmap,
     "RADIOSRF__TEST_LIVE" => "FALSE",
     "RADIOSRF__TEST_EXPLAIN" => "FALSE",
-    "RADIOSRF__APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def music_basic_setup(extra)
   if env["RADIOSRF__TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["RADIOSRF__APIKEY"],
       },
       extra || {},
     ])

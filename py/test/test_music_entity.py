@@ -50,8 +50,7 @@ class TestMusicEntity:
         music_ref01_ent = client.Music(None)
         music_ref01_match = {}
 
-        music_ref01_list_result, err = music_ref01_ent.list(music_ref01_match, None)
-        assert err is None
+        music_ref01_list_result = music_ref01_ent.list(music_ref01_match, None)
         assert isinstance(music_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _music_basic_setup(extra):
         "RADIOSRF__TEST_MUSIC_ENTID": idmap,
         "RADIOSRF__TEST_LIVE": "FALSE",
         "RADIOSRF__TEST_EXPLAIN": "FALSE",
-        "RADIOSRF__APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _music_basic_setup(extra):
     if env.get("RADIOSRF__TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("RADIOSRF__APIKEY"),
             },
             extra or {},
         ])
