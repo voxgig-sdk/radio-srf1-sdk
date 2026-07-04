@@ -109,7 +109,7 @@ Alias for `RadioSrf1SDK.test()`.
 ## MusicEntity
 
 ```ts
-const music = client.music
+const music = client.Music()
 ```
 
 ### Fields
@@ -129,7 +129,7 @@ const music = client.music
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.music.list()
+const results = await client.Music().list()
 ```
 
 ### Common Methods

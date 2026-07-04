@@ -29,18 +29,16 @@ require_once 'radiosrf1_sdk.php';
 $client = new RadioSrf1SDK();
 ```
 
-### 2. List musics
+### 2. List music records
 
 ```php
 try {
-    $result = $client->music()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Music records — iterate directly.
+    $musics = $client->Music()->list();
+    foreach ($musics as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = RadioSrf1SDK::test();
+$client = RadioSrf1SDK::test([
+    "entity" => ["music" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->music()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$music = $client->Music()->load(["id" => "test01"]);
+print_r($music);
 ```
 
 ### Use a custom fetch function
@@ -232,7 +234,7 @@ API path: `/radio-srf-1/gespielte-musik`
 
 ### Music
 
-Create an instance: `const music = client.music`
+Create an instance: `$music = $client->Music();`
 
 #### Operations
 
@@ -252,8 +254,9 @@ Create an instance: `const music = client.music`
 
 #### Example: List
 
-```ts
-const musics = await client.music.list()
+```php
+// list() returns an array of Music records (throws on error).
+$musics = $client->Music()->list();
 ```
 
 
@@ -328,7 +331,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$music = $client->music();
+$music = $client->Music();
 $music->load(["id" => "example_id"]);
 
 // $music->dataGet() now returns the loaded music data
