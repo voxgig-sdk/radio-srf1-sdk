@@ -90,11 +90,11 @@ local music = client:Music(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `album` | ``$STRING`` | No |  |
-| `artist` | ``$STRING`` | Yes |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `played_at` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `album` | `string` | No |  |
+| `artist` | `string` | Yes |  |
+| `duration` | `number` | No |  |
+| `played_at` | `string` | No |  |
+| `title` | `string` | Yes |  |
 
 ### Operations
 

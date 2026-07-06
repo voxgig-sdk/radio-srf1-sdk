@@ -8,7 +8,7 @@ Complete API reference for the RadioSrf1 Python SDK.
 ### Constructor
 
 ```python
-from radio-srf1_sdk import RadioSrf1SDK
+from radiosrf1_sdk import RadioSrf1SDK
 
 client = RadioSrf1SDK(options)
 ```
@@ -87,20 +87,20 @@ music = client.Music()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `album` | ``$STRING`` | No |  |
-| `artist` | ``$STRING`` | Yes |  |
-| `duration` | ``$INTEGER`` | No |  |
-| `played_at` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | Yes |  |
+| `album` | `str` | No |  |
+| `artist` | `str` | Yes |  |
+| `duration` | `int` | No |  |
+| `played_at` | `str` | No |  |
+| `title` | `str` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Music().list({})
+results = client.Music().list()
 for music in results:
     print(music)
 ```

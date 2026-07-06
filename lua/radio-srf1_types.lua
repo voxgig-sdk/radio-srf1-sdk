@@ -14,6 +14,11 @@
 ---@field title string
 
 ---@class MusicListMatch
+---@field album? string
+---@field artist? string
+---@field duration? number
+---@field played_at? string
+---@field title? string
 
 local M = {}
 
