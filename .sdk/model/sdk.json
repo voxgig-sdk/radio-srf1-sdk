@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -240,14 +237,17 @@
           "url": "https://www.srf.ch/radio-srf-1/gespielte-musik"
         },
         "description": "API providing information about currently played music on Radio SRF 1 including song titles and artists.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Radio SRF 1 Production Server",
             "url": "https://www.srf.ch"
           }
         ],
+        "summary": "API providing information about currently played music on Radio SRF 1 including song titles and artists.",
         "title": "Radio SRF 1",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://srf.ch"
       },
       "option": {},
       "target": {
@@ -300,6 +300,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -350,6 +353,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
