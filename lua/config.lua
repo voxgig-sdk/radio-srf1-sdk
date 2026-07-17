@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- RadioSrf1 SDK configuration
 
 local function make_config()
   return {

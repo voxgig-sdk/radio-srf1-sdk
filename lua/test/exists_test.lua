@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- RadioSrf1 SDK exists test
 
 local sdk = require("radio-srf1_sdk")
 
