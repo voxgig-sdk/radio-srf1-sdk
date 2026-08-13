@@ -23,8 +23,8 @@ module RadioSrf1TestRunner
   end
 
   def self.env_override(m)
-    live = getenv("RADIOSRF1_TEST_LIVE")
-    override = getenv("RADIOSRF1_TEST_OVERRIDE")
+    live = getenv("RADIO_SRF1_TEST_LIVE")
+    override = getenv("RADIO_SRF1_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module RadioSrf1TestRunner
       end
     end
 
-    explain = getenv("RADIOSRF1_TEST_EXPLAIN")
-    m["RADIOSRF1_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("RADIO_SRF1_TEST_EXPLAIN")
+    m["RADIO_SRF1_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

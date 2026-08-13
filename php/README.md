@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = RadioSrf1SDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $music = $client->Music()->list();
 print_r($music);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -249,7 +250,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `album` |  |
 | `artist` |  |
 | `duration` |  |
-| `played_at` |  |
+| `playedAt` |  |
 | `title` |  |
 
 Operations: List.
@@ -278,7 +279,7 @@ Create an instance: `$music = $client->Music();`
 | `album` | `string` |  |
 | `artist` | `string` |  |
 | `duration` | `int` |  |
-| `played_at` | `string` |  |
+| `playedAt` | `string` |  |
 | `title` | `string` |  |
 
 #### Example: List

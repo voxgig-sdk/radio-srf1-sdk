@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = RadioSrf1SDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 music = client.Music.list()
 puts music
 ```
@@ -239,7 +240,7 @@ returns a result `Hash` with these keys:
 | `album` |  |
 | `artist` |  |
 | `duration` |  |
-| `played_at` |  |
+| `playedAt` |  |
 | `title` |  |
 
 Operations: List.
@@ -268,7 +269,7 @@ Create an instance: `music = client.Music`
 | `album` | `String` |  |
 | `artist` | `String` |  |
 | `duration` | `Integer` |  |
-| `played_at` | `String` |  |
+| `playedAt` | `String` |  |
 | `title` | `String` |  |
 
 #### Example: List

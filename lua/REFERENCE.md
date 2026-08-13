@@ -93,7 +93,7 @@ local music = client:Music(nil)
 | `album` | `string` | No |  |
 | `artist` | `string` | Yes |  |
 | `duration` | `number` | No |  |
-| `played_at` | `string` | No |  |
+| `playedAt` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

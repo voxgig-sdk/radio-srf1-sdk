@@ -119,7 +119,7 @@ const music = client.Music()
 | `album` | `string` | No |  |
 | `artist` | `string` | Yes |  |
 | `duration` | `number` | No |  |
-| `played_at` | `string` | No |  |
+| `playedAt` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

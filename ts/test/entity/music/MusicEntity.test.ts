@@ -26,8 +26,8 @@ import {
 describe('MusicEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when RADIOSRF1_TEST_LIVE=TRUE.
-  afterEach(liveDelay('RADIOSRF1_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when RADIO_SRF1_TEST_LIVE=TRUE.
+  afterEach(liveDelay('RADIO_SRF1_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = RadioSrf1SDK.test()
@@ -38,7 +38,7 @@ describe('MusicEntity', async () => {
 
   test('basic', async (t) => {
 
-    const live = 'TRUE' === process.env.RADIO_SRF__TEST_LIVE
+    const live = 'TRUE' === process.env.RADIO_SRF1_TEST_LIVE
     for (const op of ['list']) {
       if (maybeSkipControl(t, 'entityOp', 'music.' + op, live)) return
     }
@@ -48,7 +48,7 @@ describe('MusicEntity', async () => {
     // fixture (entity TestData.json). Those don't exist on the live API.
     // Skip live runs unless the user provided a real ENTID env override.
     if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set RADIO_SRF__TEST_MUSIC_ENTID JSON to run live')
+      t.skip('live entity test uses synthetic IDs from fixture — set RADIO_SRF1_TEST_MUSIC_ENTID JSON to run live')
       return
     }
     const client = setup.client
@@ -63,7 +63,7 @@ describe('MusicEntity', async () => {
     const music_ref01_ent = client.Music()
     const music_ref01_match: any = {}
 
-    const music_ref01_list = await music_ref01_ent.list(music_ref01_match)
+    const music_ref01_list = (await music_ref01_ent.list(music_ref01_match)).map((e: any) => e.data())
 
 
   })
@@ -106,18 +106,18 @@ function basicSetup(extra?: any) {
   // basic flow consumes synthetic IDs from the fixture file; without an
   // override those synthetic IDs reach the live API and 4xx. Surface this
   // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['RADIO_SRF__TEST_MUSIC_ENTID']
+  const idmapEnvVal = process.env['RADIO_SRF1_TEST_MUSIC_ENTID']
   const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
 
   const env = envOverride({
-    'RADIO_SRF__TEST_MUSIC_ENTID': idmap,
-    'RADIO_SRF__TEST_LIVE': 'FALSE',
-    'RADIO_SRF__TEST_EXPLAIN': 'FALSE',
+    'RADIO_SRF1_TEST_MUSIC_ENTID': idmap,
+    'RADIO_SRF1_TEST_LIVE': 'FALSE',
+    'RADIO_SRF1_TEST_EXPLAIN': 'FALSE',
   })
 
-  idmap = env['RADIO_SRF__TEST_MUSIC_ENTID']
+  idmap = env['RADIO_SRF1_TEST_MUSIC_ENTID']
 
-  const live = 'TRUE' === env.RADIO_SRF__TEST_LIVE
+  const live = 'TRUE' === env.RADIO_SRF1_TEST_LIVE
 
   if (live) {
     client = new RadioSrf1SDK(merge([
@@ -134,7 +134,7 @@ function basicSetup(extra?: any) {
     client,
     struct,
     data: entityData,
-    explain: 'TRUE' === env.RADIO_SRF__TEST_EXPLAIN,
+    explain: 'TRUE' === env.RADIO_SRF1_TEST_EXPLAIN,
     live,
     syntheticOnly: live && !idmapOverridden,
     now: Date.now(),

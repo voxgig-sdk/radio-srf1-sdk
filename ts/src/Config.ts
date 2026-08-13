@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'RadioSrf1',
   }
 
 
@@ -77,7 +77,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "played_at",
+          "name": "playedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -119,6 +119,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/radio-srf-1/gespielte-musik",
               "parts": [
@@ -133,7 +134,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.tracks`"
               },
               "index$": 0
             }

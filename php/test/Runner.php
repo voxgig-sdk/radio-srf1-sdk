@@ -43,8 +43,8 @@ class RadioSrf1TestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('RADIOSRF1_TEST_LIVE');
-        $override = self::getenv('RADIOSRF1_TEST_OVERRIDE');
+        $live = self::getenv('RADIO_SRF1_TEST_LIVE');
+        $override = self::getenv('RADIO_SRF1_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class RadioSrf1TestRunner
             }
         }
 
-        $explain = self::getenv('RADIOSRF1_TEST_EXPLAIN');
+        $explain = self::getenv('RADIO_SRF1_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['RADIOSRF1_TEST_EXPLAIN'] = $explain;
+            $m['RADIO_SRF1_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

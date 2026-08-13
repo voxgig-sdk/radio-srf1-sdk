@@ -90,7 +90,7 @@ music = client.Music()
 | `album` | `str` | No |  |
 | `artist` | `str` | Yes |  |
 | `duration` | `int` | No |  |
-| `played_at` | `str` | No |  |
+| `playedAt` | `str` | No |  |
 | `title` | `str` | Yes |  |
 
 ### Operations

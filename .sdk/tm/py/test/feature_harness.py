@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import RadioSrf1Control
-from core.error import RadioSrf1Error
-from core.result import RadioSrf1Result
-from core.spec import RadioSrf1Spec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import RadioSrf1Control
+from projectname_sdk.core.error import RadioSrf1Error
+from projectname_sdk.core.result import RadioSrf1Result
+from projectname_sdk.core.spec import RadioSrf1Spec
 
 
 # True when this SDK was generated with the named feature.

@@ -95,7 +95,7 @@ $music = $client->Music();
 | `album` | `string` | No |  |
 | `artist` | `string` | Yes |  |
 | `duration` | `int` | No |  |
-| `played_at` | `string` | No |  |
+| `playedAt` | `string` | No |  |
 | `title` | `string` | Yes |  |
 
 ### Operations

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ RadioSrf1Utility.registrar = ->(u) {
   u.prepare_params = RadioSrf1Utilities::PrepareParams
   u.prepare_path = RadioSrf1Utilities::PreparePath
   u.prepare_query = RadioSrf1Utilities::PrepareQuery
+  u.graphql_body = RadioSrf1Utilities::GraphqlBody
+  u.graphql_errors = RadioSrf1Utilities::GraphqlErrors
   u.result_basic = RadioSrf1Utilities::ResultBasic
   u.result_body = RadioSrf1Utilities::ResultBody
   u.result_headers = RadioSrf1Utilities::ResultHeaders

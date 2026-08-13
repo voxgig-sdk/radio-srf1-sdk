@@ -66,11 +66,11 @@ function music_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "RADIOSRF__TEST_MUSIC_ENTID" => [],
-        "RADIOSRF__TEST_LIVE" => "FALSE",
+        "RADIO_SRF1_TEST_MUSIC_ENTID" => [],
+        "RADIO_SRF1_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["RADIOSRF__TEST_LIVE"] === "TRUE";
+    $live = $env["RADIO_SRF1_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

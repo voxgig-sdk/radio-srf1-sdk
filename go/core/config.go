@@ -47,7 +47,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "played_at",
+						"name": "playedAt",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
@@ -89,6 +89,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/radio-srf-1/gespielte-musik",
 								"parts": []any{
@@ -103,12 +104,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.tracks`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

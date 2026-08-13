@@ -47,7 +47,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "played_at",
+            ["name"] = "playedAt",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -89,6 +89,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/radio-srf-1/gespielte-musik",
                 ["parts"] = {
@@ -103,7 +104,7 @@ local function make_config()
                 },
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.tracks`",
                 },
                 ["index$"] = 0,
               },

@@ -9,7 +9,7 @@ export interface Music {
   album?: string
   artist: string
   duration?: number
-  played_at?: string
+  playedAt?: string
   title: string
 }
 
@@ -17,7 +17,7 @@ export interface MusicListMatch {
   album?: string
   artist?: string
   duration?: number
-  played_at?: string
+  playedAt?: string
   title?: string
 }
 

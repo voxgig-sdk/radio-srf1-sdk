@@ -18,7 +18,7 @@ class Music
     public ?string $album = null;
     public string $artist;
     public ?int $duration = null;
-    public ?string $played_at = null;
+    public ?string $playedAt = null;
     public string $title;
 }
 
@@ -28,7 +28,7 @@ class MusicListMatch
     public ?string $album = null;
     public ?string $artist = null;
     public ?int $duration = null;
-    public ?string $played_at = null;
+    public ?string $playedAt = null;
     public ?string $title = null;
 }
 

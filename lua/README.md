@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local music, err = client:Music():load()
+    local music, err = client:Music():list()
     if err then error(err) end
-    -- music is the loaded record
+    -- music is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -234,7 +234,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `album` |  |
 | `artist` |  |
 | `duration` |  |
-| `played_at` |  |
+| `playedAt` |  |
 | `title` |  |
 
 Operations: List.
@@ -263,7 +263,7 @@ Create an instance: `local music = client:Music(nil)`
 | `album` | `string` |  |
 | `artist` | `string` |  |
 | `duration` | `number` |  |
-| `played_at` | `string` |  |
+| `playedAt` | `string` |  |
 | `title` | `string` |  |
 
 #### Example: List

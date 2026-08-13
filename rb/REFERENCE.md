@@ -96,7 +96,7 @@ music = client.Music
 | `album` | `String` | No |  |
 | `artist` | `String` | Yes |  |
 | `duration` | `Integer` | No |  |
-| `played_at` | `String` | No |  |
+| `playedAt` | `String` | No |  |
 | `title` | `String` | Yes |  |
 
 ### Operations

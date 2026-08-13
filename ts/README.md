@@ -35,7 +35,9 @@ const client = new RadioSrf1SDK()
 
 ### 2. List music records
 
-`list()` resolves to an array of Music objects — iterate it directly:
+`list()` resolves to an array of Music ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const musics = await client.Music().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = RadioSrf1SDK.test()
 
 const music = await client.Music().list()
-// music is a bare entity populated with mock response data
+// music is the entity, populated with mock response data
+// — call music.data() for the record itself
 console.log(music)
 ```
 
@@ -287,7 +290,7 @@ The `prepare()` method returns:
 | `album` |  |
 | `artist` |  |
 | `duration` |  |
-| `played_at` |  |
+| `playedAt` |  |
 | `title` |  |
 
 Operations: list.
@@ -316,7 +319,7 @@ Create an instance: `const music = client.Music()`
 | `album` | `string` |  |
 | `artist` | `string` |  |
 | `duration` | `number` |  |
-| `played_at` | `string` |  |
+| `playedAt` | `string` |  |
 | `title` | `string` |  |
 
 #### Example: List

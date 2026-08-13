@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# RadioSrf1 SDK exists test
 
 import pytest
 from radiosrf1_sdk import RadioSrf1SDK

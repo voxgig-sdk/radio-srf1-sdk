@@ -19,7 +19,7 @@
 # @!attribute [rw] duration
 #   @return [Integer, nil]
 #
-# @!attribute [rw] played_at
+# @!attribute [rw] playedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] title
@@ -28,7 +28,7 @@ Music = Struct.new(
   :album,
   :artist,
   :duration,
-  :played_at,
+  :playedAt,
   :title,
   keyword_init: true
 )
@@ -44,7 +44,7 @@ Music = Struct.new(
 # @!attribute [rw] duration
 #   @return [Integer, nil]
 #
-# @!attribute [rw] played_at
+# @!attribute [rw] playedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] title
@@ -53,7 +53,7 @@ MusicListMatch = Struct.new(
   :album,
   :artist,
   :duration,
-  :played_at,
+  :playedAt,
   :title,
   keyword_init: true
 )

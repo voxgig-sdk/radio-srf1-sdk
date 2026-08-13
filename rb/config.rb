@@ -48,7 +48,7 @@ module RadioSrf1Config
             },
             {
               "active" => true,
-              "name" => "played_at",
+              "name" => "playedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 3,
@@ -90,6 +90,7 @@ module RadioSrf1Config
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/radio-srf-1/gespielte-musik",
                   "parts" => [
@@ -104,7 +105,7 @@ module RadioSrf1Config
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.tracks`",
                   },
                   "index$" => 0,
                 },

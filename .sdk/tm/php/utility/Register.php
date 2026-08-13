@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ RadioSrf1Utility::setRegistrar(function (RadioSrf1Utility $u): void {
     $u->prepare_params = [RadioSrf1PrepareParams::class, 'call'];
     $u->prepare_path = [RadioSrf1PreparePath::class, 'call'];
     $u->prepare_query = [RadioSrf1PrepareQuery::class, 'call'];
+    $u->graphql_body = [RadioSrf1Graphql::class, 'body'];
+    $u->graphql_errors = [RadioSrf1Graphql::class, 'errors'];
     $u->result_basic = [RadioSrf1ResultBasic::class, 'call'];
     $u->result_body = [RadioSrf1ResultBody::class, 'call'];
     $u->result_headers = [RadioSrf1ResultHeaders::class, 'call'];

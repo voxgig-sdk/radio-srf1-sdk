@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import RadioSrf1SDK
-from core.error import RadioSrf1Error
-from core.result import RadioSrf1Result
-from core.response import RadioSrf1Response
-from core.spec import RadioSrf1Spec
-from feature.base_feature import RadioSrf1BaseFeature
+from projectname_sdk.core.error import RadioSrf1Error
+from projectname_sdk.core.result import RadioSrf1Result
+from projectname_sdk.core.response import RadioSrf1Response
+from projectname_sdk.core.spec import RadioSrf1Spec
+from projectname_sdk.feature.base_feature import RadioSrf1BaseFeature
 
 
 def _client():

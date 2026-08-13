@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from radiosrf1_sdk.utility.voxgig_struct import voxgig_struct as vs
 from radiosrf1_sdk import RadioSrf1SDK
-from core import helpers
+from radiosrf1_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _music_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "RADIOSRF__TEST_MUSIC_ENTID": {},
-        "RADIOSRF__TEST_LIVE": "FALSE",
+        "RADIO_SRF1_TEST_MUSIC_ENTID": {},
+        "RADIO_SRF1_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("RADIOSRF__TEST_LIVE") == "TRUE"
+    live = env.get("RADIO_SRF1_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

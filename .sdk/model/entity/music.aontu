@@ -21,7 +21,7 @@ main: kit: entity: music: {
       type: "`$INTEGER`"
     }
     {
-      name: "played_at"
+      name: "playedAt"
       req: false
       type: "`$STRING`"
     }
@@ -71,7 +71,7 @@ main: kit: entity: music: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.tracks`"
           }
         }
       ]
