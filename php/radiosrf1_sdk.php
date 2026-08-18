@@ -40,7 +40,7 @@ class RadioSrf1SDK
         $utility = new RadioSrf1Utility();
         $this->_utility = $utility;
 
-        $config = RadioSrf1Config::make_config();
+        $config = RadioSrf1Config::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

@@ -15,7 +15,7 @@ require_relative "../RadioSrf1_sdk"
 module RadioSrf1FeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = RadioSrf1Config.make_config["feature"]
+    f = RadioSrf1Config.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -28,7 +28,7 @@ class RadioSrf1SDK
     utility = RadioSrf1Utility.new
     @_utility = utility
 
-    config = RadioSrf1Config.make_config
+    config = RadioSrf1Config.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
