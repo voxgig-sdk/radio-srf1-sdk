@@ -231,11 +231,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `album` |  |
-| `artist` |  |
-| `duration` |  |
-| `playedAt` |  |
-| `title` |  |
+| `album` | Album name |
+| `artist` | Artist name |
+| `duration` | Duration in seconds |
+| `playedAt` | Timestamp when the song was played |
+| `title` | Song title |
 
 Operations: List.
 
@@ -260,11 +260,11 @@ Create an instance: `local music = client:Music(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `string` |  |
-| `artist` | `string` |  |
-| `duration` | `number` |  |
-| `playedAt` | `string` |  |
-| `title` | `string` |  |
+| `album` | `string` | Album name |
+| `artist` | `string` | Artist name |
+| `duration` | `number` | Duration in seconds |
+| `playedAt` | `string` | Timestamp when the song was played |
+| `title` | `string` | Song title |
 
 #### Example: List
 

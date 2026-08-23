@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "RadioSrf1",
+			"slug": "radio-srf1",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,24 +36,29 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "album",
+						"short": "Album name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "artist",
 						"req": true,
+						"short": "Artist name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "duration",
+						"short": "Duration in seconds",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "playedAt",
+						"short": "Timestamp when the song was played",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
 						"req": true,
+						"short": "Song title",
 						"type": "`$STRING`",
 					},
 				},

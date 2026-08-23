@@ -19,6 +19,9 @@ module RadioSrf1Config
     {
       "main" => {
         "name" => "RadioSrf1",
+        "slug" => "radio-srf1",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -41,24 +44,29 @@ module RadioSrf1Config
           "fields" => [
             {
               "name" => "album",
+              "short" => "Album name",
               "type" => "`$STRING`",
             },
             {
               "name" => "artist",
               "req" => true,
+              "short" => "Artist name",
               "type" => "`$STRING`",
             },
             {
               "name" => "duration",
+              "short" => "Duration in seconds",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "playedAt",
+              "short" => "Timestamp when the song was played",
               "type" => "`$STRING`",
             },
             {
               "name" => "title",
               "req" => true,
+              "short" => "Song title",
               "type" => "`$STRING`",
             },
           ],

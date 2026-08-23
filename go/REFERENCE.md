@@ -98,11 +98,11 @@ fmt.Println(music.GetName()) // "music"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `album` | `string` | No |  |
-| `artist` | `string` | Yes |  |
-| `duration` | `int` | No |  |
-| `playedAt` | `string` | No |  |
-| `title` | `string` | Yes |  |
+| `album` | `string` | No | Album name |
+| `artist` | `string` | Yes | Artist name |
+| `duration` | `int` | No | Duration in seconds |
+| `playedAt` | `string` | No | Timestamp when the song was played |
+| `title` | `string` | Yes | Song title |
 
 ### Operations
 

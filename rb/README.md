@@ -237,11 +237,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `album` |  |
-| `artist` |  |
-| `duration` |  |
-| `playedAt` |  |
-| `title` |  |
+| `album` | Album name |
+| `artist` | Artist name |
+| `duration` | Duration in seconds |
+| `playedAt` | Timestamp when the song was played |
+| `title` | Song title |
 
 Operations: List.
 
@@ -266,11 +266,11 @@ Create an instance: `music = client.Music`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `String` |  |
-| `artist` | `String` |  |
-| `duration` | `Integer` |  |
-| `playedAt` | `String` |  |
-| `title` | `String` |  |
+| `album` | `String` | Album name |
+| `artist` | `String` | Artist name |
+| `duration` | `Integer` | Duration in seconds |
+| `playedAt` | `String` | Timestamp when the song was played |
+| `title` | `String` | Song title |
 
 #### Example: List
 

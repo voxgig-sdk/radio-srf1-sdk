@@ -247,11 +247,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `album` |  |
-| `artist` |  |
-| `duration` |  |
-| `playedAt` |  |
-| `title` |  |
+| `album` | Album name |
+| `artist` | Artist name |
+| `duration` | Duration in seconds |
+| `playedAt` | Timestamp when the song was played |
+| `title` | Song title |
 
 Operations: List.
 
@@ -276,11 +276,11 @@ Create an instance: `$music = $client->Music();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `string` |  |
-| `artist` | `string` |  |
-| `duration` | `int` |  |
-| `playedAt` | `string` |  |
-| `title` | `string` |  |
+| `album` | `string` | Album name |
+| `artist` | `string` | Artist name |
+| `duration` | `int` | Duration in seconds |
+| `playedAt` | `string` | Timestamp when the song was played |
+| `title` | `string` | Song title |
 
 #### Example: List
 

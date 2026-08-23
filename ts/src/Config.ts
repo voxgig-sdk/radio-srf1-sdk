@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'RadioSrf1',
+        slug: "radio-srf1",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,24 +67,29 @@ class Config {
       "fields": [
         {
           "name": "album",
+          "short": "Album name",
           "type": "`$STRING`"
         },
         {
           "name": "artist",
           "req": true,
+          "short": "Artist name",
           "type": "`$STRING`"
         },
         {
           "name": "duration",
+          "short": "Duration in seconds",
           "type": "`$INTEGER`"
         },
         {
           "name": "playedAt",
+          "short": "Timestamp when the song was played",
           "type": "`$STRING`"
         },
         {
           "name": "title",
           "req": true,
+          "short": "Song title",
           "type": "`$STRING`"
         }
       ],

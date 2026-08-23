@@ -6,7 +6,7 @@ The Golang SDK for the RadioSrf1 API — an entity-oriented client using standar
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Music(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,11 +260,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"album"` |  |
-| `"artist"` |  |
-| `"duration"` |  |
-| `"playedAt"` |  |
-| `"title"` |  |
+| `"album"` | Album name |
+| `"artist"` | Artist name |
+| `"duration"` | Duration in seconds |
+| `"playedAt"` | Timestamp when the song was played |
+| `"title"` | Song title |
 
 Operations: List.
 
@@ -289,11 +289,11 @@ Create an instance: `music := client.Music(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `string` |  |
-| `artist` | `string` |  |
-| `duration` | `int` |  |
-| `playedAt` | `string` |  |
-| `title` | `string` |  |
+| `album` | `string` | Album name |
+| `artist` | `string` | Artist name |
+| `duration` | `int` | Duration in seconds |
+| `playedAt` | `string` | Timestamp when the song was played |
+| `title` | `string` | Song title |
 
 #### Example: List
 

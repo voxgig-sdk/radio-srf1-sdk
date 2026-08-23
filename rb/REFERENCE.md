@@ -93,11 +93,11 @@ music = client.Music
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `album` | `String` | No |  |
-| `artist` | `String` | Yes |  |
-| `duration` | `Integer` | No |  |
-| `playedAt` | `String` | No |  |
-| `title` | `String` | Yes |  |
+| `album` | `String` | No | Album name |
+| `artist` | `String` | Yes | Artist name |
+| `duration` | `Integer` | No | Duration in seconds |
+| `playedAt` | `String` | No | Timestamp when the song was played |
+| `title` | `String` | Yes | Song title |
 
 ### Operations
 

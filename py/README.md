@@ -243,11 +243,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `album` |  |
-| `artist` |  |
-| `duration` |  |
-| `playedAt` |  |
-| `title` |  |
+| `album` | Album name |
+| `artist` | Artist name |
+| `duration` | Duration in seconds |
+| `playedAt` | Timestamp when the song was played |
+| `title` | Song title |
 
 Operations: List.
 
@@ -272,11 +272,11 @@ Create an instance: `music = client.Music()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `str` |  |
-| `artist` | `str` |  |
-| `duration` | `int` |  |
-| `playedAt` | `str` |  |
-| `title` | `str` |  |
+| `album` | `str` | Album name |
+| `artist` | `str` | Artist name |
+| `duration` | `int` | Duration in seconds |
+| `playedAt` | `str` | Timestamp when the song was played |
+| `title` | `str` | Song title |
 
 #### Example: List
 

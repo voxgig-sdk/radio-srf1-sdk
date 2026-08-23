@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "RadioSrf1",
+      slug = "radio-srf1",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,24 +32,29 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "album",
+            ["short"] = "Album name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "artist",
             ["req"] = true,
+            ["short"] = "Artist name",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "duration",
+            ["short"] = "Duration in seconds",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "playedAt",
+            ["short"] = "Timestamp when the song was played",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "title",
             ["req"] = true,
+            ["short"] = "Song title",
             ["type"] = "`$STRING`",
           },
         },

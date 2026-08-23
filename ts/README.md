@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,11 +287,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `album` |  |
-| `artist` |  |
-| `duration` |  |
-| `playedAt` |  |
-| `title` |  |
+| `album` | Album name |
+| `artist` | Artist name |
+| `duration` | Duration in seconds |
+| `playedAt` | Timestamp when the song was played |
+| `title` | Song title |
 
 Operations: list.
 
@@ -316,11 +316,11 @@ Create an instance: `const music = client.Music()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `album` | `string` |  |
-| `artist` | `string` |  |
-| `duration` | `number` |  |
-| `playedAt` | `string` |  |
-| `title` | `string` |  |
+| `album` | `string` | Album name |
+| `artist` | `string` | Artist name |
+| `duration` | `number` | Duration in seconds |
+| `playedAt` | `string` | Timestamp when the song was played |
+| `title` | `string` | Song title |
 
 #### Example: List
 

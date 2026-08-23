@@ -8,26 +8,31 @@ main: kit: entity: music: {
     {
       name: "album"
       req: false
+      short: "Album name"
       type: "`$STRING`"
     }
     {
       name: "artist"
       req: true
+      short: "Artist name"
       type: "`$STRING`"
     }
     {
       name: "duration"
       req: false
+      short: "Duration in seconds"
       type: "`$INTEGER`"
     }
     {
       name: "playedAt"
       req: false
+      short: "Timestamp when the song was played"
       type: "`$STRING`"
     }
     {
       name: "title"
       req: true
+      short: "Song title"
       type: "`$STRING`"
     }
   ]

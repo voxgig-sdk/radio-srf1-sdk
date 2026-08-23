@@ -87,11 +87,11 @@ music = client.Music()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `album` | `str` | No |  |
-| `artist` | `str` | Yes |  |
-| `duration` | `int` | No |  |
-| `playedAt` | `str` | No |  |
-| `title` | `str` | Yes |  |
+| `album` | `str` | No | Album name |
+| `artist` | `str` | Yes | Artist name |
+| `duration` | `int` | No | Duration in seconds |
+| `playedAt` | `str` | No | Timestamp when the song was played |
+| `title` | `str` | Yes | Song title |
 
 ### Operations
 
