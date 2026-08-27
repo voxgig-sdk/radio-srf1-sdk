@@ -28,6 +28,7 @@ module RadioSrf1Config
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
