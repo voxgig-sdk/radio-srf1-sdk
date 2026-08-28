@@ -25,10 +25,7 @@ class Music
 /** Request payload for Music#list. */
 class MusicListMatch
 {
-    public ?string $album = null;
-    public ?string $artist = null;
-    public ?int $duration = null;
-    public ?string $playedAt = null;
-    public ?string $title = null;
+    public ?string $date = null;
+    public ?int $limit = null;
 }
 

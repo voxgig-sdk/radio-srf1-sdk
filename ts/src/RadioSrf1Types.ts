@@ -14,10 +14,7 @@ export interface Music {
 }
 
 export interface MusicListMatch {
-  album?: string
-  artist?: string
-  duration?: number
-  playedAt?: string
-  title?: string
+  date?: string
+  limit?: number
 }
 

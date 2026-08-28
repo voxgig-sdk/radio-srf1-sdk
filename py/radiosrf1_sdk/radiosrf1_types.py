@@ -28,8 +28,5 @@ class Music(MusicRequired, total=False):
 
 
 class MusicListMatch(TypedDict, total=False):
-    album: str
-    artist: str
-    duration: int
-    playedAt: str
-    title: str
+    date: str
+    limit: int
