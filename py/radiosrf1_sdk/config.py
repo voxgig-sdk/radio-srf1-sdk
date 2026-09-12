@@ -1,6 +1,14 @@
 # RadioSrf1 SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -69,6 +77,7 @@ def make_config():
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "playedAt",
             "short": "Timestamp when the song was played",
             "type": "`$STRING`",
@@ -107,9 +116,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/radio-srf-1/gespielte-musik",
-                "parts": [
-                  "radio-srf-1",
-                  "gespielte-musik",
+                "segments": [
+                  {
+                    "lit": "radio-srf-1",
+                  },
+                  {
+                    "lit": "gespielte-musik",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -121,6 +134,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.tracks`",
                 },
+                "parts": [
+                  "radio-srf-1",
+                  "gespielte-musik",
+                ],
               },
             ],
           },

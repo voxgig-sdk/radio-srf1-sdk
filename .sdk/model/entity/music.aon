@@ -24,6 +24,7 @@ main: kit: entity: music: {
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "playedAt"
       req: false
       short: "Timestamp when the song was played"
@@ -64,9 +65,13 @@ main: kit: entity: music: {
           }
           method: "GET"
           orig: "/radio-srf-1/gespielte-musik"
-          parts: [
-            "radio-srf-1"
-            "gespielte-musik"
+          segments: [
+            {
+              lit: "radio-srf-1"
+            }
+            {
+              lit: "gespielte-musik"
+            }
           ]
           select: {
             exist: [

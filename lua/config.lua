@@ -48,6 +48,7 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "playedAt",
             ["short"] = "Timestamp when the song was played",
             ["type"] = "`$STRING`",
@@ -86,9 +87,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/radio-srf-1/gespielte-musik",
-                ["parts"] = {
-                  "radio-srf-1",
-                  "gespielte-musik",
+                ["segments"] = {
+                  {
+                    ["lit"] = "radio-srf-1",
+                  },
+                  {
+                    ["lit"] = "gespielte-musik",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -99,6 +104,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.tracks`",
+                },
+                ["parts"] = {
+                  "radio-srf-1",
+                  "gespielte-musik",
                 },
               },
             },
