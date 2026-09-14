@@ -105,7 +105,7 @@ local results, err = client:Music():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
+| TypeScript | `@voxgig-sdk/radio-srf1-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
 | Python | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
 | PHP | `voxgig-sdk/radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/radio-srf1-sdk/go` | `go get github.com/voxgig-sdk/radio-srf1-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Music():list()
 ### TypeScript
 
 ```ts
-import { RadioSrf1SDK } from '@voxgig-sdk/radio-srf1'
+import { RadioSrf1SDK } from '@voxgig-sdk/radio-srf1-sdk'
 
 const client = new RadioSrf1SDK()
 
