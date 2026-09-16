@@ -63,6 +63,12 @@ main: kit: entity: music: {
               }
             ]
           }
+          contract: {
+            id: "GET /radio-srf-1/gespielte-musik"
+            json: "{\"operationId\":\"getPlayedMusic\",\"parameters\":[{\"description\":\"Number of tracks to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Date for which to retrieve played music (format: YYYY-MM-DD)\",\"in\":\"query\",\"name\":\"date\",\"required\":false,\"schema\":{\"format\":\"date\",\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"lastUpdated\":\"2024-01-15T14:35:00Z\",\"station\":\"Radio SRF 1\",\"tracks\":[{\"album\":\"Example Album\",\"artist\":\"Example Artist\",\"duration\":210,\"playedAt\":\"2024-01-15T14:30:00Z\",\"title\":\"Example Song\"}]},\"schema\":{\"properties\":{\"lastUpdated\":{\"description\":\"Last update timestamp\",\"format\":\"date-time\",\"type\":\"string\"},\"station\":{\"description\":\"Radio station name\",\"example\":\"Radio SRF 1\",\"type\":\"string\"},\"tracks\":{\"items\":{\"properties\":{\"album\":{\"description\":\"Album name\",\"type\":\"string\"},\"artist\":{\"description\":\"Artist name\",\"type\":\"string\"},\"duration\":{\"description\":\"Duration in seconds\",\"type\":\"integer\"},\"playedAt\":{\"description\":\"Timestamp when the song was played\",\"format\":\"date-time\",\"type\":\"string\"},\"title\":{\"description\":\"Song title\",\"type\":\"string\"}},\"required\":[\"title\",\"artist\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with played music information\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/radio-srf-1/gespielte-musik"
           segments: [

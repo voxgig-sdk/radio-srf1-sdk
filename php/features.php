@@ -4,7 +4,10 @@ declare(strict_types=1);
 // RadioSrf1 SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class RadioSrf1Features
@@ -14,8 +17,14 @@ class RadioSrf1Features
         switch ($name) {
             case "base":
                 return new RadioSrf1BaseFeature();
+            case "ratelimit":
+                return new RadioSrf1RatelimitFeature();
+            case "retry":
+                return new RadioSrf1RetryFeature();
             case "test":
                 return new RadioSrf1TestFeature();
+            case "timeout":
+                return new RadioSrf1TimeoutFeature();
             default:
                 return new RadioSrf1BaseFeature();
         }
@@ -31,7 +40,10 @@ class RadioSrf1Features
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
