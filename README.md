@@ -105,12 +105,12 @@ local results, err = client:Music():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/radio-srf1-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
-| Python | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
-| PHP | `voxgig-sdk/radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
+| TypeScript | `@voxgig-sdk/radio-srf1-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/tags) |
+| Python | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/tags) |
+| PHP | `voxgig-sdk/radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/radio-srf1-sdk/go` | `go get github.com/voxgig-sdk/radio-srf1-sdk/go@latest` |
-| Ruby | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
-| Lua | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/releases) |
+| Ruby | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/tags) |
+| Lua | `voxgig-sdk-radio-srf1` | publish pending — [install from git tag](https://github.com/voxgig-sdk/radio-srf1-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/radio-srf1-sdk/go-cli` | `go install github.com/voxgig-sdk/radio-srf1-sdk/go-cli/cmd/radio-srf1@latest` |
 | Go MCP server | `github.com/voxgig-sdk/radio-srf1-sdk/go-mcp` | `go get github.com/voxgig-sdk/radio-srf1-sdk/go-mcp@latest` |
 
