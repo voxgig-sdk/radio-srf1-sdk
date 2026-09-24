@@ -91,31 +91,36 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "album",
-						"short": "Album name",
+						"title": "Album",
 						"type": "`$STRING`",
+						"short": "Album name",
 					},
 					map[string]any{
 						"name": "artist",
+						"title": "Artist",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Artist name",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "duration",
-						"short": "Duration in seconds",
+						"title": "Duration",
 						"type": "`$INTEGER`",
+						"short": "Duration in seconds",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "playedAt",
-						"short": "Timestamp when the song was played",
+						"title": "Played At",
 						"type": "`$STRING`",
+						"short": "Timestamp when the song was played",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "title",
+						"title": "Title",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Song title",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "music",
@@ -125,23 +130,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "date",
-											"orig": "date",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/radio-srf-1/gespielte-musik",
@@ -153,19 +141,37 @@ func MakeConfig() map[string]any {
 										"lit": "gespielte-musik",
 									},
 								},
+								"parts": []any{
+									"radio-srf-1",
+									"gespielte-musik",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.tracks`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "date",
+											"orig": "date",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"date",
 										"limit",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.tracks`",
-								},
-								"parts": []any{
-									"radio-srf-1",
-									"gespielte-musik",
 								},
 							},
 						},

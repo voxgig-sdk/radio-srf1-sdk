@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -139,31 +132,36 @@ class Config {
       "fields": [
         {
           "name": "album",
-          "short": "Album name",
-          "type": "`$STRING`"
+          "title": "Album",
+          "type": "`$STRING`",
+          "short": "Album name"
         },
         {
           "name": "artist",
+          "title": "Artist",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Artist name",
-          "type": "`$STRING`"
+          "short": "Artist name"
         },
         {
           "name": "duration",
-          "short": "Duration in seconds",
-          "type": "`$INTEGER`"
+          "title": "Duration",
+          "type": "`$INTEGER`",
+          "short": "Duration in seconds"
         },
         {
-          "format": "date-time",
           "name": "playedAt",
+          "title": "Played At",
+          "type": "`$STRING`",
           "short": "Timestamp when the song was played",
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "title",
+          "title": "Title",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Song title",
-          "type": "`$STRING`"
+          "short": "Song title"
         }
       ],
       "name": "music",
@@ -173,23 +171,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "date",
-                    "orig": "date",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 10,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/radio-srf-1/gespielte-musik",
@@ -201,20 +182,38 @@ class Config {
                   "lit": "gespielte-musik"
                 }
               ],
+              "parts": [
+                "radio-srf-1",
+                "gespielte-musik"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.tracks`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "date",
+                    "orig": "date",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "date",
                   "limit"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.tracks`"
-              },
-              "parts": [
-                "radio-srf-1",
-                "gespielte-musik"
-              ]
+              }
             }
           ]
         }

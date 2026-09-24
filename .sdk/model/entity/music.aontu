@@ -1,0 +1,103 @@
+# Entity: music
+
+main: kit: entity: music: {
+
+  alias: field: {}
+
+  fields: {
+    album: {
+      h: "Album"
+      n: "album"
+      r: false
+      sh: "Album name"
+      t: "`$STRING`"
+    }
+    artist: {
+      h: "Artist"
+      n: "artist"
+      r: true
+      sh: "Artist name"
+      t: "`$STRING`"
+    }
+    duration: {
+      h: "Duration"
+      n: "duration"
+      r: false
+      sh: "Duration in seconds"
+      t: "`$INTEGER`"
+    }
+    playedAt: {
+      fo: "date-time"
+      h: "Played At"
+      n: "playedAt"
+      r: false
+      sh: "Timestamp when the song was played"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Song title"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "music"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /radio-srf-1/gespielte-musik"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "date"
+                or: "date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 10
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/radio-srf-1/gespielte-musik"
+          q: {
+            exist: [
+              "date"
+              "limit"
+            ]
+          }
+          s: [
+            {
+              lit: "radio-srf-1"
+            }
+            {
+              lit: "gespielte-musik"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.tracks`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

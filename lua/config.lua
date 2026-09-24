@@ -87,31 +87,36 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "album",
-            ["short"] = "Album name",
+            ["title"] = "Album",
             ["type"] = "`$STRING`",
+            ["short"] = "Album name",
           },
           {
             ["name"] = "artist",
+            ["title"] = "Artist",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Artist name",
-            ["type"] = "`$STRING`",
           },
           {
             ["name"] = "duration",
-            ["short"] = "Duration in seconds",
+            ["title"] = "Duration",
             ["type"] = "`$INTEGER`",
+            ["short"] = "Duration in seconds",
           },
           {
-            ["format"] = "date-time",
             ["name"] = "playedAt",
-            ["short"] = "Timestamp when the song was played",
+            ["title"] = "Played At",
             ["type"] = "`$STRING`",
+            ["short"] = "Timestamp when the song was played",
+            ["format"] = "date-time",
           },
           {
             ["name"] = "title",
+            ["title"] = "Title",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Song title",
-            ["type"] = "`$STRING`",
           },
         },
         ["name"] = "music",
@@ -121,23 +126,6 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["args"] = {
-                  ["query"] = {
-                    {
-                      ["kind"] = "query",
-                      ["name"] = "date",
-                      ["orig"] = "date",
-                      ["type"] = "`$STRING`",
-                    },
-                    {
-                      ["example"] = 10,
-                      ["kind"] = "query",
-                      ["name"] = "limit",
-                      ["orig"] = "limit",
-                      ["type"] = "`$INTEGER`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/radio-srf-1/gespielte-musik",
@@ -149,19 +137,37 @@ local function make_config()
                     ["lit"] = "gespielte-musik",
                   },
                 },
+                ["parts"] = {
+                  "radio-srf-1",
+                  "gespielte-musik",
+                },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body.tracks`",
+                },
+                ["args"] = {
+                  ["query"] = {
+                    {
+                      ["name"] = "date",
+                      ["orig"] = "date",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "query",
+                    },
+                    {
+                      ["name"] = "limit",
+                      ["orig"] = "limit",
+                      ["type"] = "`$INTEGER`",
+                      ["kind"] = "query",
+                      ["example"] = 10,
+                    },
+                  },
+                },
                 ["select"] = {
                   ["exist"] = {
                     "date",
                     "limit",
                   },
-                },
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body.tracks`",
-                },
-                ["parts"] = {
-                  "radio-srf-1",
-                  "gespielte-musik",
                 },
               },
             },

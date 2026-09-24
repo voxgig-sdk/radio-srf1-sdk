@@ -1,7 +1,7 @@
 // Typed models for the RadioSrf1 SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,11 +14,6 @@ import (
 
 // Music is the typed data model for the music entity.
 type Music struct {
-	Album *string `json:"album,omitempty"`
-	Artist string `json:"artist"`
-	Duration *int `json:"duration,omitempty"`
-	PlayedAt *string `json:"playedAt,omitempty"`
-	Title string `json:"title"`
 }
 
 // MusicListMatch is the typed request payload for Music.ListTyped.

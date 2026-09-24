@@ -19,7 +19,6 @@ import type {
   MusicListMatch,
 } from '../RadioSrf1Types'
 
-// TODO: needs Entity superclass
 class MusicEntity extends RadioSrf1EntityBase<Music> {
 
   constructor(client: RadioSrf1SDK, entopts: any) {
